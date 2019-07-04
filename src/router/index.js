@@ -158,6 +158,17 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/amap',
+    component: Layout,
+    redirect: '/amap',
+    children: [{
+      path: 'amp',
+      name: 'Dashboards',
+      component: () => import('@/views/amap/index'),
+      meta: { title: '高德地图', icon: 'dashboard' }
+    }]
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
