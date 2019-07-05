@@ -169,6 +169,17 @@ export const constantRoutes = [
       meta: { title: '高德地图', icon: 'dashboard' }
     }]
   },
+  {
+    path: '/test',
+    component: Layout,
+    redirect: '/test',
+    children: [{
+      path: 'amp',
+      name: 'Dashboards',
+      component: () => import('@/views/test/index'),
+      meta: { title: '测试组件', icon: 'dashboard' }
+    }]
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
