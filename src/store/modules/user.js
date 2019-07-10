@@ -7,7 +7,6 @@ const state = {
   name: '',
   avatar: ''
 }
-
 const mutations = {
   SET_TOKEN: (state, token) => {
     state.token = token

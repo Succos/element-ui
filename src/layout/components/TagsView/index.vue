@@ -91,10 +91,13 @@
         return tags
       },
       initTags() {
+
         const affixTags = this.affixTags = this.filterAffixTags(this.routes)
         for (const tag of affixTags) {
+
           // Must have tag name
           if (tag.name) {
+
             this.$store.dispatch('tagsView/addVisitedView', tag)
           }
         }
@@ -153,6 +156,7 @@
         })
       },
       toLastView(visitedViews, view) {
+
         const latestView = visitedViews.slice(-1)[0]
         if (latestView) {
           this.$router.push(latestView)
@@ -161,8 +165,10 @@
           // you can adjust it according to your needs.
           if (view.name === 'Dashboard') {
             // to reload home page
+
             this.$router.replace({ path: '/redirect' + view.fullPath })
           } else {
+
             this.$router.push('/')
           }
         }
