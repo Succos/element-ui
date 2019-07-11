@@ -71,7 +71,7 @@
 
     #map-container {
         width: 100%;
-        height: 40rem;
+        height: 10rem;
     }
 </style>
 <script>
