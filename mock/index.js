@@ -9,7 +9,7 @@ const mocks = [
   ...user,
   ...table,
   ...article,
-    ...map
+  ...map
 ]
 
 // for front mock

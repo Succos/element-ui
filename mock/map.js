@@ -4376,9 +4376,13 @@ const data = Mock.mock({
       'lng': '102.649506',
       'isonline': 0
     }
-  ]
+  ],
+  'detail': {
+    'name': '这是name',
+    'price': 1500,
+    'detail': ' 啥子机器坏了 '
+  }
 })
-
 export default [
   {
     url: '/map/list',
@@ -4404,6 +4408,19 @@ export default [
         data: {
           total: items.length,
           items: items
+        }
+      }
+    }
+  },
+  {
+    url: '/repair/detail',
+    type: 'get',
+    response: config => {
+      const detail = data.detail
+      return {
+        code: 20000,
+        data: {
+          items: detail
         }
       }
     }

@@ -1,35 +1,44 @@
 <template>
-  <el-table
-    :data="tableData"
-    style="width: 100%"
-  >
-    <el-table-column
-      prop="date"
-      label="日期"
-      width="180"
-    />
-    <el-table-column
-      prop="name"
-      label="姓名"
-      width="180"
-    />
-    <el-table-column
-      prop="address"
-      label="地址"
-    />
-  </el-table>
+  <div>
+    <el-table
+      :data="tableData"
+      style="width: 100%"
+    >
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180"
+      />
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="180"
+      />
+      <el-table-column
+        prop="address"
+        label="地址"
+      />
+    </el-table>
+    <amap-info-window title="这货不是弹窗" />
+  </div>
+
 </template>
 
 <script>
-  import { getArticleList } from "@/api/article";
+  import { getArticleList } from '@/api/article'
+  import AmapInfoWindow from '@/views/components/AmapInfoWindow'
+  // import AmapInfoWindow from '../components/AmapInfoWindow'
   export default {
+    name: 'Test',
+    components: { AmapInfoWindow },
     data() {
       return {
-        tableData: []
+        tableData: [],
+        title: 'nihaoa'
       }
     },
     mounted() {
-      getArticleList(3).then(response=>{
+      getArticleList(1).then(response => {
         console.log(response)
       })
       this.$store.dispatch('login/article', 15).then(() => {

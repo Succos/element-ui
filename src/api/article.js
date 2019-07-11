@@ -1,9 +1,8 @@
 import request from '@/utils/request'
 
-export function getArticleList(data) {
+export function getArticleList(id) {
   return request({
-    url: '/article/list',
-    method: 'get',
-    data
+    url: `/article/${id}/list`,
+    method: 'get'
   })
 }

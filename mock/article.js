@@ -13,7 +13,7 @@ const data = Mock.mock({
 
 export default [
   {
-    url: '/article/list',
+    url: '/article/[A-Za-z0-9]/list',
     type: 'get',
     response: config => {
       const items = data.items

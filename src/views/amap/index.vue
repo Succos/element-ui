@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <div class="map-content">
-      <div id="map-container" />
+      <div id="map-container" v-loading="loading" />
       <el-radio-group v-model="radio" class="select-role" @change="changeRole">
         <el-radio-button label="0">医院人员</el-radio-button>
         <el-radio-button label="1">维修人员</el-radio-button>
@@ -46,13 +46,15 @@
         />
       </el-table>
     </aside>
+    <div ref="infowindow">
+      <amap-info-window title="这货不是弹窗" />
+    </div>
   </div>
 </template>
 <style>
     .map-content {
         width: 100%;
         height: 100%;
-        background: red;
         position: relative;
     }
     .map-content .select-role{
@@ -69,60 +71,44 @@
 
     #map-container {
         width: 100%;
-        height: 20rem;
+        height: 40rem;
     }
 </style>
 <script>
+  import AMap from 'AMap'
   import { getList, getRepairList } from '@/api/map'
+  import AmapInfoWindow from '@/views/components/AmapInfoWindow'
   export default {
     name: 'NameValue',
+    components: { AmapInfoWindow },
     data() {
       return {
         radio: '1',
         driver: null,
         map: Object,
-        gridData: [
-          {
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-            // jinwei  zaixian zhuangtai
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }],
+        loading: true,
         tableData: [],
         value: [],
         options: [],
         selectedOptions: [25, 265, 2309] // 默认城市
-
       }
     },
     mounted() {
-      this.loadmap()
-      this.init()
       this.loadcity()
+      this.loadmap()
     },
     methods: {
       loadcity() {
-     getList().then(response => {
-       this.options = response.data.items
-     })
+         getList().then(response => {
+           this.options = response.data.items
+         })
       },
       loadmap() {
         this.map = new AMap.Map('map-container', {
-          resizeEnable: true,
-          zoom: 13
-        })
+            resizeEnable: true,
+            zoom: 13
+          })
+        this.loading = false
       },
       changeRole(val) {
         // 获取该区域维修人员列表
@@ -130,7 +116,7 @@
           getRepairList().then(response => {
             this.tableData = response.data.items
             this.addMarkers()
-             this.map.setFitView()
+            this.map.setFitView()
           })
           console.log('维修人员获取列表')
         } else {
@@ -138,9 +124,9 @@
         }
       },
       addMarkers() {
+        const that = this
         for (const item of this.tableData) {
           console.log(item.lng, item.lat)
-
           const markers = new AMap.Marker({
             map: this.map,
             icon: item.icon,
@@ -151,16 +137,19 @@
           markers.itemId = item.name
           // 给marker添加单击事件
           AMap.event.addListener(markers, 'click', function(e) {
-            console.log(e.target.itemId)
+            const infoWindow = new AMap.InfoWindow({
+              content: that.$refs.infowindow,
+              size: new AMap.Size(0, 0),
+              autoMove: true,
+              offset: new AMap.Pixel(0, -25)
+            })
+            infoWindow.open(that.map, e.target.getPosition())
           })
         }
       },
       // 选择区域时跳转至指定区域
       gotoCity() {
         this.map.setCity(this.selectedOptions)
-      },
-      init() {
-
       },
       handleChange(value) {
         // 地图中心变为指定区域

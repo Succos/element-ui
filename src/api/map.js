@@ -14,3 +14,10 @@ export function getRepairList(data) {
     data
   })
 }
+export function getRepairDetail(data) {
+  return request({
+    url: '/repair/detail',
+    method: 'get',
+    data
+  })
+}
