@@ -89,7 +89,6 @@ export const constantRoutes = [
       }
     ]
   },
-
   {
     path: '/nested',
     component: Layout,
@@ -147,7 +146,6 @@ export const constantRoutes = [
       }
     ]
   },
-
   {
     path: 'external-link',
     component: Layout,
@@ -168,6 +166,140 @@ export const constantRoutes = [
       component: () => import('@/views/amap/index'),
       meta: { title: '高德地图', icon: 'dashboard' }
     }]
+  },
+  {
+    path: '/user',
+    component: Layout,
+    redirect: '/test',
+    name: 'Nested',
+    meta: {
+      title: '用户管理',
+      icon: 'nested'
+    },
+    children: [{
+      path: 'list',
+      name: 'Dashboards',
+      component: () => import('@/views/test/index'),
+      meta: { title: '用户列表', icon: 'dashboard' }
+    },
+      {
+        path: 'list',
+        name: 'Dashboards',
+        component: () => import('@/views/test/index'),
+        meta: { title: '权限管理', icon: 'dashboard' }
+      },
+      {
+        path: 'list',
+        name: 'Dashboards',
+        component: () => import('@/views/test/index'),
+        meta: { title: '角色管理', icon: 'dashboard' }
+      }
+]
+  },
+  {
+    path: '/example',
+    component: Layout,
+    redirect: '/example/table',
+    name: 'Example',
+    meta: { title: '设备管理', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '设备列表', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '分类管理', icon: 'tree' }
+      }
+    ]
+  },
+  {
+    path: '/example',
+    component: Layout,
+    redirect: '/example/table',
+    name: 'Example',
+    meta: { title: '医院管理', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '医院列表', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '添加医院', icon: 'tree' }
+      }
+    ]
+  },
+  {
+    path: '/example',
+    component: Layout,
+    redirect: '/example/table',
+    name: 'Example',
+    meta: { title: '订单管理', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '订单列表', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '分类管理', icon: 'tree' }
+      }
+    ]
+  },
+  {
+    path: '/example',
+    component: Layout,
+    redirect: '/example/table',
+    name: 'Example',
+    meta: { title: '内容管理', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '文章管理', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '广告管理', icon: 'tree' }
+      }
+    ]
+  },
+  {
+    path: '/example',
+    component: Layout,
+    redirect: '/example/table',
+    name: 'Example',
+    meta: { title: '系统设置', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '上传设置', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '缓存设置', icon: 'tree' }
+      }
+    ]
   },
   {
     path: '/test',
