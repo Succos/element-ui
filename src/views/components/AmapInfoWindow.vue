@@ -7,7 +7,6 @@
     <div v-for="o in list" :key="o" class="text item">
       {{ '列表内容 ' + o }}
       <router-link :to="'/test/amp'" class="link-type">
-  <h1>niha</h1>
         <span style="color: red">点我去看订单详情</span>
       </router-link>
     </div>

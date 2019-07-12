@@ -4377,10 +4377,37 @@ const data = Mock.mock({
       'isonline': 0
     }
   ],
+  'hospital': [
+    {
+      'name': '维修人员①',
+      'icon': '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-3.png',
+      'address': '上海市普陀区金沙江路 1518 弄',
+      'lat': '24.955532',
+      'lng': '102.78921',
+      'isonline': 1
+    },
+    {
+      'name': '维修人员②',
+      'icon': '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-1.png',
+      'address': '上海市普陀区金沙江路 1518 弄',
+      'lat': '25.094878',
+      'lng': '102.877172',
+      'isonline': 1
+    },
+    {
+      'name': '维修人员③',
+      'icon': '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-2.png',
+      'address': '上海市普陀区金沙江路 1518 弄',
+      'lat': '25.101161',
+      'lng': '102.649506',
+      'isonline': 0
+    }
+  ],
+
   'detail': {
-    'name': '这是name',
+    'name': '下单时间',
     'price': 1500,
-    'detail': ' 啥子机器坏了 '
+    'detail': '下单详情'
   }
 })
 export default [
@@ -4421,6 +4448,20 @@ export default [
         code: 20000,
         data: {
           items: detail
+        }
+      }
+    }
+  },
+  {
+    url: '/hospital/list',
+    type: 'get',
+    response: config => {
+      const items = data.hospital
+      return {
+        code: 20000,
+        data: {
+          total: items.length,
+          items: items
         }
       }
     }

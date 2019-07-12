@@ -71,12 +71,12 @@
 
     #map-container {
         width: 100%;
-        height: 10rem;
+        height: 25rem;
     }
 </style>
 <script>
   import AMap from 'AMap'
-  import { getList, getRepairList } from '@/api/map'
+  import { getList, getRepairList, getHospitalList } from '@/api/map'
   import AmapInfoWindow from '@/views/components/AmapInfoWindow'
   export default {
     name: 'NameValue',
@@ -109,6 +109,11 @@
             zoom: 13
           })
         this.loading = false
+        getRepairList().then(response => {
+          this.tableData = response.data.items
+          this.addMarkers()
+          this.map.setFitView()
+        })
       },
       changeRole(val) {
         // 获取该区域维修人员列表
@@ -120,6 +125,11 @@
           })
           console.log('维修人员获取列表')
         } else {
+          getHospitalList().then(response => {
+            this.tableData = response.data.items
+            this.addMarkers()
+            this.map.setFitView()
+          })
           console.log('医院人员获取列表')
         }
       },
@@ -134,6 +144,7 @@
             offset: new AMap.Pixel(-13, -30)
           })
           // 给markers添加自定义参数
+
           markers.itemId = item.name
           // 给marker添加单击事件
           AMap.event.addListener(markers, 'click', function(e) {

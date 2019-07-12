@@ -21,3 +21,10 @@ export function getRepairDetail(data) {
     data
   })
 }
+export function getHospitalList(data) {
+  return request({
+    url: '/hospital/list',
+    method: 'get',
+    data
+  })
+}
