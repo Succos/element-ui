@@ -4406,8 +4406,8 @@ const data = Mock.mock({
 
   'detail': {
     'name': '下单时间',
-    'price': 1500,
-    'detail': '下单详情'
+    'price': '￥1500元',
+    'detail': '下单的单位'
   }
 })
 export default [

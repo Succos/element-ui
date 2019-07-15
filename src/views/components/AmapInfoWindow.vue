@@ -2,13 +2,12 @@
   <el-card class="box-card">
     <div slot="header" class="clearfix">
       <span>{{ title }}</span>
-      <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+      <router-link :to="'/test/amp'" class="link-type">
+        <el-button style="float: right; padding: 3px 0" type="text">操作订单</el-button>
+      </router-link>
     </div>
     <div v-for="o in list" :key="o" class="text item">
-      {{ '列表内容 ' + o }}
-      <router-link :to="'/test/amp'" class="link-type">
-        <span style="color: red">点我去看订单详情</span>
-      </router-link>
+      {{   o }}
     </div>
   </el-card>
 </template>

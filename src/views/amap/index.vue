@@ -46,8 +46,8 @@
         />
       </el-table>
     </aside>
-    <div v-if="infowindow" ref="infowindow">
-      <amap-info-window title="这货不是弹窗" />
+    <div ref="infowindow" v-show="isshow">
+      <amap-info-window title="新订单" />
     </div>
   </div>
 </template>
@@ -73,7 +73,6 @@
         width: 100%;
         height: 25rem;
     }
-
 </style>
 <script>
   import AMap from 'AMap'
@@ -86,7 +85,7 @@
       return {
         radio: '1',
         driver: null,
-        infowindow: false,
+        isshow: false,
         map: Object,
         loading: true,
         tableData: [],
@@ -139,7 +138,6 @@
         this.infowindow = true
         const that = this
         for (const item of this.tableData) {
-          console.log(item.lng, item.lat)
           const markers = new AMap.Marker({
             map: this.map,
             icon: item.icon,
@@ -147,11 +145,12 @@
             offset: new AMap.Pixel(-13, -30)
           })
           // 给markers添加自定义参数
-
           markers.itemId = item.name
           // 给marker添加单击事件
           AMap.event.addListener(markers, 'click', function(e) {
-
+            if (!that.isshow) {
+              that.isshow = true
+            }
             const infoWindow = new AMap.InfoWindow({
               content: that.$refs.infowindow,
               size: new AMap.Size(0, 0),
