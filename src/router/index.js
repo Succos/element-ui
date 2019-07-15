@@ -74,126 +74,126 @@ export const constantRoutes = [
       icon: 'nested'
     },
     children: [{
-      path: 'list',
+      path: 'index',
       name: 'Dashboards',
-      component: () => import('@/views/test/index'),
+      component: () => import('@/views/user/index'),
       meta: { title: '用户列表', icon: 'dashboard' }
     },
       {
-        path: 'list',
+        path: 'permission',
         name: 'Dashboards',
-        component: () => import('@/views/test/index'),
+        component: () => import('@/views/user/permission'),
         meta: { title: '权限管理', icon: 'dashboard' }
       },
       {
-        path: 'list',
+        path: 'role',
         name: 'Dashboards',
-        component: () => import('@/views/test/index'),
+        component: () => import('@/views/user/role'),
         meta: { title: '角色管理', icon: 'dashboard' }
       }
 ]
   },
   {
-    path: '/example',
+    path: '/device',
     component: Layout,
-    redirect: '/example/table',
+    redirect: '/device/index',
     name: 'Example',
     meta: { title: '设备管理', icon: 'example' },
     children: [
       {
-        path: 'table',
+        path: 'index',
         name: 'Table',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/device/index'),
         meta: { title: '设备列表', icon: 'table' }
       },
       {
-        path: 'tree',
+        path: 'category',
         name: 'Tree',
-        component: () => import('@/views/tree/index'),
+        component: () => import('@/views/device/category'),
         meta: { title: '分类管理', icon: 'tree' }
       }
     ]
   },
   {
-    path: '/example',
+    path: '/hospital',
     component: Layout,
-    redirect: '/example/table',
+    redirect: '/hospital/index',
     name: 'Example',
     meta: { title: '医院管理', icon: 'example' },
     children: [
       {
-        path: 'table',
+        path: 'index',
         name: 'Table',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/hospital/index'),
         meta: { title: '医院列表', icon: 'table' }
       },
       {
-        path: 'tree',
+        path: 'add',
         name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: '添加医院', icon: 'tree' }
+        component: () => import('@/views/hospital/add'),
+        meta: { title: '科室管理', icon: 'tree' }
       }
     ]
   },
   {
-    path: '/example',
+    path: '/order',
     component: Layout,
-    redirect: '/example/table',
+    redirect: '/order/index',
     name: 'Example',
     meta: { title: '订单管理', icon: 'example' },
     children: [
       {
-        path: 'table',
+        path: 'index',
         name: 'Table',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/order/index'),
         meta: { title: '订单列表', icon: 'table' }
       },
       {
-        path: 'tree',
+        path: 'service',
         name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: '分类管理', icon: 'tree' }
+        component: () => import('@/views/order/service'),
+        meta: { title: '售后订单', icon: 'tree' }
       }
     ]
   },
   {
-    path: '/example',
+    path: '/article',
     component: Layout,
-    redirect: '/example/table',
+    redirect: '/article/index',
     name: 'Example',
     meta: { title: '内容管理', icon: 'example' },
     children: [
       {
-        path: 'table',
+        path: 'index',
         name: 'Table',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/article/index'),
         meta: { title: '文章管理', icon: 'table' }
       },
       {
-        path: 'tree',
+        path: 'post',
         name: 'Tree',
-        component: () => import('@/views/tree/index'),
+        component: () => import('@/views/article/post'),
         meta: { title: '广告管理', icon: 'tree' }
       }
     ]
   },
   {
-    path: '/example',
+    path: '/system',
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
     meta: { title: '系统设置', icon: 'example' },
     children: [
       {
-        path: 'table',
+        path: 'upsetting',
         name: 'Table',
-        component: () => import('@/views/table/index'),
+        component: () => import('@/views/system/upsetting'),
         meta: { title: '上传设置', icon: 'table' }
       },
       {
-        path: 'tree',
+        path: 'cache',
         name: 'Tree',
-        component: () => import('@/views/tree/index'),
+        component: () => import('@/views/system/cache'),
         meta: { title: '缓存设置', icon: 'tree' }
       }
     ]

@@ -46,7 +46,7 @@
         />
       </el-table>
     </aside>
-    <div ref="infowindow">
+    <div v-if="infowindow" ref="infowindow">
       <amap-info-window title="这货不是弹窗" />
     </div>
   </div>
@@ -73,6 +73,7 @@
         width: 100%;
         height: 25rem;
     }
+
 </style>
 <script>
   import AMap from 'AMap'
@@ -85,6 +86,7 @@
       return {
         radio: '1',
         driver: null,
+        infowindow: false,
         map: Object,
         loading: true,
         tableData: [],
@@ -134,6 +136,7 @@
         }
       },
       addMarkers() {
+        this.infowindow = true
         const that = this
         for (const item of this.tableData) {
           console.log(item.lng, item.lat)
@@ -148,6 +151,7 @@
           markers.itemId = item.name
           // 给marker添加单击事件
           AMap.event.addListener(markers, 'click', function(e) {
+
             const infoWindow = new AMap.InfoWindow({
               content: that.$refs.infowindow,
               size: new AMap.Size(0, 0),
