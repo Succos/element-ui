@@ -7,7 +7,6 @@ const tokens = {
     token: 'editor-token'
   }
 }
-
 const users = {
   'admin-token': {
     roles: ['admin'],
@@ -22,7 +21,6 @@ const users = {
     name: 'Normal Editor'
   }
 }
-
 export default [
   // user login
   {
@@ -39,7 +37,7 @@ export default [
         }
       }
       return {
-        code: 20000,
+        code: 0,
         data: token
       }
     }
@@ -52,7 +50,6 @@ export default [
     response: config => {
       const { token } = config.query
       const info = users[token]
-
       // mock error
       if (!info) {
         return {
@@ -60,9 +57,8 @@ export default [
           message: 'Login failed, unable to get user details.'
         }
       }
-
       return {
-        code: 20000,
+        code: 0,
         data: info
       }
     }
@@ -74,7 +70,7 @@ export default [
     type: 'post',
     response: _ => {
       return {
-        code: 20000,
+        code: 0,
         data: 'success'
       }
     }

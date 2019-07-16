@@ -21,6 +21,7 @@ router.beforeEach(async(to, from, next) => {
   const hasToken = getToken()
 
   if (hasToken) {
+
     if (to.path === '/login') {
       // if is logged in, redirect to the home page
       next({ path: '/' })
@@ -28,6 +29,7 @@ router.beforeEach(async(to, from, next) => {
     } else {
       const hasGetUserInfo = store.getters.name
       if (hasGetUserInfo) {
+        console.log('路由开始1')
         next()
       } else {
         try {
@@ -35,9 +37,9 @@ router.beforeEach(async(to, from, next) => {
         const UserInfo = await store.dispatch('user/getInfo')
           // generate accessible routes map based on roles
           const accessRoutes = await store.dispatch('permission/generateRoutes', UserInfo)
-          router.addRoutes(accessRoutes)
+           router.addRoutes(accessRoutes)
           next()
-        } catch (error) {s
+        } catch (error) {
           // remove token and go to login page to re-login
           await store.dispatch('user/resetToken')
           Message.error(error || 'Has Error')
