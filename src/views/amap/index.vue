@@ -46,7 +46,7 @@
         />
       </el-table>
     </aside>
-    <div ref="infowindow" v-show="isshow">
+    <div v-show="isshow" ref="infowindow">
       <amap-info-window title="新订单" />
     </div>
   </div>
@@ -107,7 +107,7 @@
       loadmap() {
         this.map = new AMap.Map('map-container', {
             resizeEnable: true,
-            zoom: 13
+            zoom: 12
           })
         this.loading = false
         getRepairList().then(response => {
@@ -135,11 +135,10 @@
         }
       },
       addMarkers() {
-        this.infowindow = true
         const that = this
         for (const item of this.tableData) {
           const markers = new AMap.Marker({
-            map: this.map,
+            map: that.map,
             icon: item.icon,
             position: [item.lng, item.lat],
             offset: new AMap.Pixel(-13, -30)
@@ -148,6 +147,7 @@
           markers.itemId = item.name
           // 给marker添加单击事件
           AMap.event.addListener(markers, 'click', function(e) {
+            console.log(that.isshow)
             if (!that.isshow) {
               that.isshow = true
             }
@@ -157,7 +157,7 @@
               autoMove: true,
               offset: new AMap.Pixel(0, -25)
             })
-            infoWindow.open(that.map, e.target.getPosition())
+            infoWindow.open(that.map, markers.getPosition())
           })
         }
       },

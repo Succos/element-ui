@@ -71,25 +71,25 @@ export const constantRoutes = [
     name: 'Nested',
     meta: {
       title: '用户管理',
-      icon: 'nested'
+      icon: 'user'
     },
     children: [{
       path: 'index',
       name: 'Dashboards',
       component: () => import('@/views/user/index'),
-      meta: { title: '用户列表', icon: 'dashboard' }
+      meta: { title: '用户列表', icon: 'nested' }
     },
       {
         path: 'permission',
         name: 'Dashboards',
         component: () => import('@/views/user/permission'),
-        meta: { title: '权限管理', icon: 'dashboard' }
+        meta: { title: '权限管理', icon: 'permission' }
       },
       {
         path: 'role',
         name: 'Dashboards',
         component: () => import('@/views/user/role'),
-        meta: { title: '角色管理', icon: 'dashboard' }
+        meta: { title: '角色管理', icon: 'password' }
       }
 ]
   },
@@ -98,7 +98,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/device/index',
     name: 'Example',
-    meta: { title: '设备管理', icon: 'example' },
+    meta: { title: '设备管理', icon: 'form' },
     children: [
       {
         path: 'index',
@@ -119,7 +119,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/hospital/index',
     name: 'Example',
-    meta: { title: '医院管理', icon: 'example' },
+    meta: { title: '医院管理', icon: 'link' },
     children: [
       {
         path: 'index',
@@ -140,7 +140,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/order/index',
     name: 'Example',
-    meta: { title: '订单管理', icon: 'example' },
+    meta: { title: '订单管理', icon: 'password' },
     children: [
       {
         path: 'index',
@@ -161,7 +161,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/article/index',
     name: 'Example',
-    meta: { title: '内容管理', icon: 'example' },
+    meta: { title: '内容管理', icon: 'eye' },
     children: [
       {
         path: 'index',
