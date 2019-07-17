@@ -52,7 +52,8 @@ export const constantRoutes = [
       meta: { title: '首页', icon: 'dashboard' },
       affix: true
     }]
-  },
+  }]
+export const asyncRoutes = [
   {
     path: '/amap',
     component: Layout,
@@ -61,7 +62,7 @@ export const constantRoutes = [
       path: 'amp',
       name: 'Dashboards',
       component: () => import('@/views/amap/index'),
-      meta: { title: '高德地图', icon: 'dashboard' }
+      meta: { title: '高德地图', icon: 'dashboard', roles: ['editor'] }
     }]
   },
   {
@@ -71,13 +72,14 @@ export const constantRoutes = [
     name: 'Nested',
     meta: {
       title: '用户管理',
-      icon: 'user'
+      icon: 'user',
+      roles: ['admin']
     },
     children: [{
       path: 'index',
       name: 'Dashboards',
       component: () => import('@/views/user/index'),
-      meta: { title: '用户列表', icon: 'nested' }
+      meta: { title: '用户列表', icon: 'nested', roles: ['editor'] }
     },
       {
         path: 'permission',
@@ -140,7 +142,11 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/order/index',
     name: 'Example',
-    meta: { title: '订单管理', icon: 'password' },
+    meta: {
+      icon: 'edit',
+      title: '订单管理',
+      roles: ['orders.index']
+    },
     children: [
       {
         path: 'index',

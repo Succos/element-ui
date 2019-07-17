@@ -9,7 +9,7 @@ function hasPermission(roles, route) {
   if (route.meta && route.meta.roles) {
     return roles.some(role => route.meta.roles.includes(role))
   } else {
-    return false
+    return true
   }
 }
 
@@ -53,7 +53,9 @@ const actions = {
       if (roles.includes('admin')) {
         accessedRoutes = asyncRoutes || []
       } else {
-        accessedRoutes = filterAsyncRoutes(asyncRoutes, permissions)
+        console.log(asyncRoutes)
+        console.log(permissions)
+        accessedRoutes = filterAsyncRoutes(asyncRoutes, ['editor'])
       }
       commit('SET_ROUTES', accessedRoutes)
       resolve(accessedRoutes)
