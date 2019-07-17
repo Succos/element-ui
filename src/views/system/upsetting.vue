@@ -1,7 +1,7 @@
 <template>
-    <div class="app-container">
-        <h1>上传设置</h1>
-    </div>
+  <div class="app-container">
+    <h1>上传设置</h1>
+  </div>
 </template>
 <script>
     export default {

@@ -48,23 +48,23 @@ export const constantRoutes = [
     children: [{
       path: 'dashboard',
       name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
+      component: () => import('@/views/amap/index'),
       meta: { title: '首页', icon: 'dashboard' },
       affix: true
     }]
   }]
 export const asyncRoutes = [
-  {
-    path: '/amap',
-    component: Layout,
-    redirect: '/amap',
-    children: [{
-      path: 'amp',
-      name: 'Dashboards',
-      component: () => import('@/views/amap/index'),
-      meta: { title: '高德地图', icon: 'dashboard', roles: ['editor'] }
-    }]
-  },
+  // {
+  //   path: '/amap',
+  //   component: Layout,
+  //   redirect: '/amap',
+  //   children: [{
+  //     path: 'amp',
+  //     name: 'Dashboards',
+  //     component: () => import('@/views/amap/index'),
+  //     meta: { title: '高德地图', icon: 'dashboard', roles: ['editor'] }
+  //   }]
+  // },
   {
     path: '/user',
     component: Layout,

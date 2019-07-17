@@ -1,67 +1,67 @@
 <template>
-    <div>
-        <el-table
-                ref="singleTable"
-                :data="tableData"
-                style="width: 100%"
-        >
-            <el-table-column
-                    type="selection"
-                    width="55"
-            />
+  <div>
+    <el-table
+      ref="singleTable"
+      :data="tableData"
+      style="width: 100%"
+    >
+      <el-table-column
+        type="selection"
+        width="55"
+      />
 
-            <el-table-column
-                    prop="name"
-                    label="医院"
-                    width="180"
-            />
-            <el-table-column
-                    prop="address"
-                    label="描述"
-            />
-            <el-table-column
-                    prop="date"
-                    label="日期"
-                    width="180"
-            />
-            <el-table-column label="操作">
-                <template slot="header" slot-scope="scope">
-                    <el-input
-                            size="mini"
-                            placeholder="输入关键字搜索"
-                    />
-                </template>
-                <template slot-scope="scope">
-                    <el-button
-                            size="mini"
-                            type="text"
-                            @click="handleEdit(scope.$index, scope.row)"
-                    >编辑</el-button>
-                    <el-button
-                            size="mini"
-                            type="text"
-                            @click="handleDelete(scope.$index, scope.row)"
-                    >删除</el-button>
-                </template>
-            </el-table-column>
-        </el-table>
-        <el-row style="margin-top: 1rem">
-            <el-col :span="12">
-                <el-button size="mini" @click="setCurrent()">取消选择</el-button>
-            </el-col>
-            <el-col :span="12">
-                <el-pagination
-                        :current-page="currentPage4"
-                        :page-sizes="[100, 200, 300, 400]"
-                        :page-size="100"
-                        layout="total, sizes, prev, pager, next, jumper"
-                        :total="400"
-                        @size-change="handleSizeChange"
-                        @current-change="handleCurrentChange"
-                />
-            </el-col>
-        </el-row>
-    </div>
+      <el-table-column
+        prop="name"
+        label="医院"
+        width="180"
+      />
+      <el-table-column
+        prop="address"
+        label="描述"
+      />
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180"
+      />
+      <el-table-column label="操作">
+        <template slot="header" slot-scope="scope">
+          <el-input
+            size="mini"
+            placeholder="输入关键字搜索"
+          />
+        </template>
+        <template slot-scope="scope">
+          <el-button
+            size="mini"
+            type="text"
+            @click="handleEdit(scope.$index, scope.row)"
+          >编辑</el-button>
+          <el-button
+            size="mini"
+            type="text"
+            @click="handleDelete(scope.$index, scope.row)"
+          >删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    <el-row style="margin-top: 1rem">
+      <el-col :span="12">
+        <el-button size="mini" @click="setCurrent()">取消选择</el-button>
+      </el-col>
+      <el-col :span="12">
+        <el-pagination
+          :current-page="currentPage4"
+          :page-sizes="[100, 200, 300, 400]"
+          :page-size="100"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="400"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+        />
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>

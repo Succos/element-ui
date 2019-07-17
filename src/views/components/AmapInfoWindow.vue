@@ -7,7 +7,7 @@
       </router-link>
     </div>
     <div v-for="o in list" :key="o" class="text item">
-      {{   o }}
+      {{ o }}
     </div>
   </el-card>
 </template>

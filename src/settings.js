@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '这是默认的title',
+  title: '易订维修',
 
   /**
    * @type {boolean} true | false

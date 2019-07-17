@@ -1,8 +1,8 @@
 <template>
-    <div class="app-container">
-        <h1>文章列表</h1>
+  <div class="app-container">
+    <h1>文章列表</h1>
 
-    </div>
+  </div>
 </template>
 
 <script>
