@@ -8,9 +8,8 @@ const mutations = {
 }
 
 const actions = {
-  // dis
   article({ commit }, userInfo) {
-    console.log("触发了article这个事件")
+    console.log("触发article这个事件")
   }
 }
 export default {

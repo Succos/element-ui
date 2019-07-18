@@ -4417,7 +4417,7 @@ export default [
     response: config => {
       const items = data.items
       return {
-        code: 0,
+        status: 200,
         data: {
           total: items.length,
           items: items
@@ -4431,7 +4431,7 @@ export default [
     response: config => {
       const items = data.repair
       return {
-        code: 0,
+        status: 200,
         data: {
           total: items.length,
           items: items
@@ -4445,7 +4445,7 @@ export default [
     response: config => {
       const detail = data.detail
       return {
-        code: 0,
+        status: 200,
         data: {
           items: detail
         }
@@ -4458,7 +4458,7 @@ export default [
     response: config => {
       const items = data.hospital
       return {
-        code: 0,
+        status: 200,
         data: {
           total: items.length,
           items: items

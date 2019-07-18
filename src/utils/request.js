@@ -46,7 +46,7 @@ service.interceptors.response.use(
     const res = response.data
 
     // if the custom code is not 20000, it is judged as an error.
-    if (res.code !== 0) {
+    if (res.status !== 200) {
       Message({
         message: res.message || 'Error',
         type: 'error',
@@ -54,7 +54,7 @@ service.interceptors.response.use(
       })
 
       // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
-      if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
+      if (res.status === 500 || res.code === 400 || res.code === 50014) {
         // to re-login
         MessageBox.confirm('你已经退出了, you can cancel to stay on this page, or log in again', '确认退出', {
           confirmButtonText: '重新登录',
@@ -68,11 +68,6 @@ service.interceptors.response.use(
       }
       return Promise.reject(new Error(res.message || 'Error'))
     } else {
-      var json = {
-        'status': 200,
-        'msg': '消息',
-        'data': {}
-      }
       return res
     }
   },
