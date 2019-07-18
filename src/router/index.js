@@ -143,7 +143,7 @@ export const asyncRoutes = [
     redirect: '/order/index',
     name: 'Example',
     meta: {
-      icon: 'edit',
+      icon: 'example',
       title: '订单管理',
       roles: ['orders.index']
     },

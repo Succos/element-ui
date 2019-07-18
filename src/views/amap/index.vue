@@ -36,6 +36,7 @@
           label="经度"
           width="180"
         />
+
         <el-table-column
           prop="lng"
           label="纬度"
@@ -43,7 +44,9 @@
         <el-table-column
           prop="isonline"
           label="在线状态"
-        />
+        >
+          <el-tag type="success">在线</el-tag>
+        </el-table-column>
       </el-table>
     </aside>
     <div v-show="isshow" ref="infowindow">
