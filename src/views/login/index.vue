@@ -1,11 +1,9 @@
 <template>
   <div class="login-container">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-
       <div class="title-container">
         <h3 class="title">系统登录</h3>
       </div>
-
       <el-form-item prop="username">
         <span class="svg-container">
           <svg-icon icon-class="user" />
@@ -20,7 +18,6 @@
           auto-complete="on"
         />
       </el-form-item>
-
       <el-form-item prop="password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
@@ -40,15 +37,21 @@
           <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
         </span>
       </el-form-item>
-
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
-
+      <div style="position:relative">
+        <div class="tips">
+          <span>运营 : admin</span>
+          <span>密码(length>6) : any</span>
+        </div>
+        <div class="tips">
+          <span style="margin-right:18px;">维修 : editor</span>
+          <span>密码(length>6)  : any</span>
+        </div>
+      </div>
     </el-form>
   </div>
 </template>
-
 <script>
-
   export default {
     name: 'Login',
     data() {
@@ -116,7 +119,7 @@
               }
             })
           } else {
-            console.log('error submit!!')
+            console.log('验证不通过，不提交!!')
             return false
           }
         })

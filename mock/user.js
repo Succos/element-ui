@@ -76,5 +76,15 @@ export default [
         data: 'success'
       }
     }
+  },
+  {
+    url: '/user/list',
+    type: 'post',
+    response: _ => {
+      return {
+        code: 0,
+        data: 'success'
+      }
+    }
   }
 ]
