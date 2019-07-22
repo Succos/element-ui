@@ -1,7 +1,7 @@
 <template>
   <div class="app-content">
     <div class="swiper" style="width: 100%" :height="bannerHeight + 'px'">
-      <el-carousel :interval="5000" arrow="always">
+      <el-carousel :interval="2000" arrow="always">
         <el-carousel-item v-for="item in dataimg" :key="items">
           <div>
             <img :src="item.src" class="bannerImg" :title="item.txt">
@@ -9,8 +9,6 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-
-
   </div>
 </template>
 <style>
