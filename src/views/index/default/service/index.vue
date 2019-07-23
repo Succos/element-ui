@@ -75,18 +75,18 @@
         vertical-align: middle;
         width: 2.26rem;
         height: 0.12rem;
-        background: url("../../../assets/index/icon8.png") no-repeat;
+        background: url("../../../../assets/index/icon8.png") no-repeat;
         background-size: 100% 100%;margin-right: 0.40rem;}
     .service-process h3:after {
         content: "";
         display: inline-block;
         vertical-align: middle;
         width: 2.26rem;height: 0.12rem;
-        background: url("../../../assets/index/icon9.png") no-repeat; background-size: 100% 100%;margin-left: 0.40rem;}
+        background: url("../../../../assets/index/icon9.png") no-repeat; background-size: 100% 100%;margin-left: 0.40rem;}
 
     .app-service {
         padding: 0.02rem 0 0.6rem 0;
-        background: url("../../../assets/index/service_bg_img.jpg") no-repeat center;
+        background: url("../../../../assets/index/service_bg_img.jpg") no-repeat center;
         background-size: cover;
     }
     .service-list {
@@ -123,7 +123,7 @@
         position: absolute;
         width: 0.8rem;
         height: 0.28rem;
-        background: url("../../../assets/index/menuarrow.png") no-repeat center; background-size: auto 100%;
+        background: url("../../../../assets/index/menuarrow.png") no-repeat center; background-size: auto 100%;
         top: 1.6rem;
         right: -0.48rem;}
 </style>

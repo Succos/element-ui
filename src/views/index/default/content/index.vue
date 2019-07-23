@@ -2,7 +2,7 @@
   <div class="app-content">
     <div class="swiper" style="width: 100%" :height="bannerHeight + 'px'">
       <el-carousel :interval="2000" arrow="always">
-        <el-carousel-item v-for="item in dataimg" :key="items">
+        <el-carousel-item v-for="item in dataimg" :key="item">
           <div>
             <img :src="item.src" class="bannerImg" :title="item.txt">
           </div>
@@ -73,7 +73,7 @@
       methods: {
         setSize() {
           this.bannerHeight = 740 / 2560 * this.screenWidth
-          if (this.bannerHeight = 740) this.bannerHeight = 740
+          if (this.bannerHeight === 740) this.bannerHeight = 740
           if (this.bannerHeight < 360) this.bannerHeight = 360
         }
       }

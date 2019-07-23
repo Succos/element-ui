@@ -47,6 +47,8 @@
           <span style="margin-right:18px;">维修 : editor</span>
           <span>密码(length>6)  : any</span>
         </div>
+        <el-button type="primary"> <router-link to="/index">方便测试</router-link></el-button>
+        <div @click="goBack(1)">fanhui</div>
       </div>
     </el-form>
   </div>
@@ -123,6 +125,12 @@
             return false
           }
         })
+      },
+      goBack(num) {
+        console.log('fanhui')
+        console.log(this.$route)
+        console.log(num)
+        window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
       }
     }
   }

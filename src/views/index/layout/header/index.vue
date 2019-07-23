@@ -1,5 +1,5 @@
 <template>
-  <div class="app-header" >
+  <div class="app-header">
     <h1 class="logo">
       <a href="">
         <img src="@/assets/logo/logo-big.png" alt="易订维修" class="logo-img-big">

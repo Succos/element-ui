@@ -5,6 +5,7 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
+import Index from '@/views/index/layout'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -33,8 +34,18 @@ import Layout from '@/layout'
 export const constantRoutes = [
   {
     path: '/index',
-    component: () => import('@/views/index/index'),
-    hidden: true
+    component: Index,
+    redirect: '/about',
+    children: [
+      {
+        path: 'default',
+        name: 'default',
+        component: () => import('@/views/index/default')
+      }, {
+      path: 'about',
+      name: 'Dashboard',
+      component: () => import('@/views/index/about')
+    }]
   },
   {
     path: '/login',
@@ -57,7 +68,8 @@ export const constantRoutes = [
       meta: { title: '首页', icon: 'dashboard' },
       affix: true
     }]
-  }]
+  }
+  ]
 export const asyncRoutes = [
   // {
   //   path: '/amap',
@@ -81,7 +93,7 @@ export const asyncRoutes = [
       roles: ['admin']
     },
     children: [{
-      path: 'index',
+      path: 'about.vue',
       name: 'Dashboards',
       component: () => import('@/views/user/index'),
       meta: { title: '用户列表', icon: 'nested', roles: ['editor'] }
@@ -108,7 +120,7 @@ export const asyncRoutes = [
     meta: { title: '设备管理', icon: 'form' },
     children: [
       {
-        path: 'index',
+        path: 'about.vue',
         name: 'Table',
         component: () => import('@/views/device/index'),
         meta: { title: '设备列表', icon: 'table' }
@@ -129,7 +141,7 @@ export const asyncRoutes = [
     meta: { title: '医院管理', icon: 'link' },
     children: [
       {
-        path: 'index',
+        path: 'about.vue',
         name: 'Table',
         component: () => import('@/views/hospital/index'),
         meta: { title: '医院列表', icon: 'table' }
@@ -150,11 +162,11 @@ export const asyncRoutes = [
     meta: {
       icon: 'example',
       title: '订单管理',
-      roles: ['orders.index']
+      roles: ['orders.about.vue']
     },
     children: [
       {
-        path: 'index',
+        path: 'about.vue',
         name: 'Table',
         component: () => import('@/views/order/index'),
         meta: { title: '订单列表', icon: 'table' }
@@ -175,7 +187,7 @@ export const asyncRoutes = [
     meta: { title: '内容管理', icon: 'eye' },
     children: [
       {
-        path: 'index',
+        path: 'about.vue',
         name: 'Table',
         component: () => import('@/views/article/index'),
         meta: { title: '文章管理', icon: 'table' }
