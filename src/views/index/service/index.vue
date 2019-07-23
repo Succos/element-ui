@@ -10,14 +10,18 @@
         <li>
           <span class="ser-jt" />
           <a href="javascript:;">
-            <div class="pic"><img src="http://yzg.100zhuangxiu.cn/wp-content/themes/spfish/images/ico_work_01.png"></div>
+            <div class="pic">
+              <img src="http://yzg.100zhuangxiu.cn/wp-content/themes/spfish/images/ico_work_01.png">
+            </div>
             <p>下载安装</p>
           </a>
         </li>
         <li>
           <span class="ser-jt" />
           <a href="javascript:;">
-            <div class="pic"><img src="http://yzg.100zhuangxiu.cn/wp-content/themes/spfish/images/ico_work_02.png"></div>
+            <div class="pic">
+              <img src="http://yzg.100zhuangxiu.cn/wp-content/themes/spfish/images/ico_work_02.png">
+            </div>
             <p>注册/认证</p>
           </a>
         </li>
