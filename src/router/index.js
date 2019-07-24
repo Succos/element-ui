@@ -43,9 +43,15 @@ export const constantRoutes = [
         component: () => import('@/views/index/default')
       }, {
       path: 'about',
-      name: 'Dashboard',
+      name: 'about',
       component: () => import('@/views/index/about')
-    }]
+    },
+      {
+        path: 'join',
+        name: 'join',
+        component: () => import('@/views/index/join')
+      }
+    ]
   },
   {
     path: '/login',

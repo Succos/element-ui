@@ -16,7 +16,8 @@
         <!--        </el-radio-button>-->
       </el-radio-group>
       <el-menu
-        :default-active="activeIndex2"
+        router
+        :default-active="$route.path"
         class="el-menu-pc"
         mode="horizontal"
         background-color="#ffffff"
@@ -24,11 +25,17 @@
         active-text-color="#009fe8"
         @select="handleSelect"
       >
-        <el-menu-item index="1">首页</el-menu-item>
-        <el-menu-item index="2">医院</el-menu-item>
-        <el-menu-item index="3">我要加入</el-menu-item>
-        <el-menu-item index="4">关于我们</el-menu-item>
-        <el-menu-item index="5">登录</el-menu-item>
+        <el-menu-item index="/index/default">首页</el-menu-item>
+        <el-submenu index="" class="el-menu-item">
+          <template
+            slot="title"
+          >医院</template>
+          <el-menu-item index="2-1">介绍设备</el-menu-item>
+          <el-menu-item index="2-2">2-2</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="/index/join">我要加入</el-menu-item>
+        <el-menu-item index="/index/about">关于我们</el-menu-item>
+        <el-menu-item index="/login">登录</el-menu-item>
         <el-menu-item index="6">注册</el-menu-item>
       </el-menu>
 
@@ -37,25 +44,44 @@
           <svg-icon icon-class="close" @click.native="handleCloseMenu" />
         </div>
         <el-menu
-          :default-active="activeIndex2"
+          router
+          :default-active="$route.path"
           class="mobile-menu"
-          mode="vertical"
-          background-color="#009fe8"
+          background-color="#409EFF"
           text-color="#fff"
-          active-text-color="#ffd04b"
-          @select="handleSelect"
+          active-text-color="#fff"
+          @open="handleOpen"
+          @close="handleClose"
         >
-          <el-menu-item index="1" class="el-menu-item">首页</el-menu-item>
-          <el-menu-item index="2" class="el-menu-item">医院</el-menu-item>
-          <el-menu-item index="3" class="el-menu-item">我要加入</el-menu-item>
-          <el-menu-item index="4" class="el-menu-item">关于我们</el-menu-item>
-          <el-menu-item index="5" class="el-menu-item">登录</el-menu-item>
-          <el-menu-item index="6" class="el-menu-item">注册</el-menu-item>
+          <el-menu-item index="/index/default">
+            <span slot="title">首页</span>
+          </el-menu-item>
+          <el-submenu index="1">
+            <template slot="title">
+              <span>医院</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="1-1">介绍设备</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-menu-item index="/index/join">
+            <span slot="title">我要加入</span>
+          </el-menu-item>
+          <el-menu-item index="/index/about">
+            <span slot="title">关于我们</span>
+          </el-menu-item>
+          <el-menu-item index="/login">
+            <span slot="title">登录</span>
+          </el-menu-item>
+          <el-menu-item index="4">
+            <span slot="title">注册</span>
+          </el-menu-item>
         </el-menu>
       </div>
     </div>
   </div>
 </template>
+
 <style lang="css" scoped>
 .mobile-menu{
     width: 30%;
@@ -99,25 +125,6 @@
   }
   .el-menu.el-menu--horizontal{
     border: 0;
-  }
-  .el-menu--horizontal>.el-menu-item{
-    height: 30px;
-    line-height: 30px;
-    width: 90px;
-    text-align: center;
-    font-size: 16px;
-  }
-  .el-menu-item:hover {
-    border: none !important;
-    border-radius: 20px !important;
-    background-color: #009fe8 !important;
-    color: #fff !important;
-  }
-  .is-active{
-       border: none !important;
-      border-radius: 20px !important;
-     background-color: #009fe8 !important;
-     color: #fff !important;
   }
     .logo{
         float: left;

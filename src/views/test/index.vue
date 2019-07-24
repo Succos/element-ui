@@ -1,52 +1,85 @@
 <template>
-  <div>
-    <el-table
-      :data="tableData"
-      style="width: 100%"
-    >
-      <el-table-column
-        prop="date"
-        label="日期"
-        width="180"
-      />
-      <el-table-column
-        prop="name"
-        label="姓名"
-        width="180"
-      />
-      <el-table-column
-        prop="address"
-        label="地址"
-      />
-    </el-table>
-
-    <amap-info-window title="这货不是弹窗" />
+  <div class="app-container">
+    <ul class="menu" style="margin: 0 auto">
+      <li v-for="(v,i) in menuData" :key="i" class="menu-item" @click="menuShow(v,i)"><a href="#">{{ v.title }}</a>
+        <div v-show="v.childs&&v.childs.length>0">
+          <ul class="submenu">
+            <li v-for="(item,index) in v.childs" :key="index" class="menu-item"><a href="#">{{ item.title }}</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </div>
-
 </template>
+<style lang="css" scoped>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    .menu {
+        list-style: none;
+        background: #02a0e9;
+    }
+    .submenu {
+        list-style: none;
+        background: #1f2d3d;
+    }
+
+    .menu-item {
+        float: left;
+        width: 120px;
+        height: auto;
+        border: 1px solid #000;
+        text-align: center;
+    }
+</style>
 
 <script>
-  import { getArticleList } from '@/api/article'
-  import AmapInfoWindow from '@/views/components/AmapInfoWindow'
-  // import AmapInfoWindow from '../components/AmapInfoWindow'
-  export default {
-    name: 'Test',
-    components: { AmapInfoWindow },
-    data() {
-      return {
-        tableData: [],
-        title: 'nihaoa'
-      }
-    },
-    mounted() {
-      getArticleList(1).then(response => {
-        console.log(response)
-      })
-      this.$store.dispatch('login/article', 15).then(() => {
-        console.log('dispatch执行完之后')
-      }).catch(() => {
-        console.log('补货了浴场')
-      })
+    export default {
+        name: 'Test',
+        data() {
+            return {
+                menuData: [
+                    {
+                        title: '一级菜单',
+                        icon: 'el-icon-message',
+                        classShow: true,
+                        bigshowclass: false,
+                        isSubShow: false
+                    },
+                    {
+                        icon: 'el-icon-message',
+                        title: '两级菜单',
+                        bigshowclass: false,
+                        isSubShow: false,
+                        childs: [
+                            {
+                                icon: 'el-icon-loading',
+                                title: '权限管理',
+                                path: '',
+                                showclass: false
+                            },
+                            {
+                                icon: 'el-icon-bell',
+                                title: '角色管理',
+                                path: '',
+                                showclass: false
+                            }
+                        ]
+                    }
+                ]
+
+            }
+        },
+        methods: {
+            menuShow(v, i) {
+               if (v.childs && v.childs.length > 0) {
+                    // 展开菜单
+                   // 同时保证只有一个子菜单保持在菜单展开状态
+               } else {
+                   console.log(v.title)
+               }
+            }
+        }
     }
-  }
 </script>

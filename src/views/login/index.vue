@@ -47,7 +47,7 @@
           <span style="margin-right:18px;">维修 : editor</span>
           <span>密码(length>6)  : any</span>
         </div>
-        <el-button type="primary"> <router-link to="/index">方便测试</router-link></el-button>
+        <el-button type="primary"> <router-link to="/index/default">方便测试</router-link></el-button>
         <div @click="goBack(1)">fanhui</div>
       </div>
     </el-form>

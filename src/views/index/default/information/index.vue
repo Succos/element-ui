@@ -116,7 +116,7 @@
 </template>
 <script>
     export default {
-        name: 'AppInfomation'
+        name: 'AppInformation'
     }
 </script>
 <style lang="css" scoped>

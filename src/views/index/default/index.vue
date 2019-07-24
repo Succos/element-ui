@@ -12,7 +12,7 @@
         <app-information />
       </el-main>
       <el-footer class="clearfloat">
-        <app-footer />
+        &nbsp;
       </el-footer>
     </el-container>
   </div>
@@ -30,22 +30,6 @@
             AppContent,
             AppService,
             AppInformation
-        },
-        data() {
-            return {
-                activeIndex: '1',
-                activeIndex2: '1'
-            }
-        },
-        computed: {
-            key() {
-                return this.$route.path
-            }
-        },
-        methods: {
-            handleSelect(key, keyPath) {
-                console.log(key, keyPath)
-            }
         }
     }
 </script>
