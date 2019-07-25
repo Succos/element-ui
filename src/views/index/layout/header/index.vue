@@ -30,13 +30,13 @@
           <template
             slot="title"
           >医院</template>
-          <el-menu-item index="2-1">介绍设备</el-menu-item>
+          <el-menu-item index="/index/hospital">介绍设备</el-menu-item>
           <el-menu-item index="2-2">2-2</el-menu-item>
         </el-submenu>
         <el-menu-item index="/index/join">我要加入</el-menu-item>
         <el-menu-item index="/index/about">关于我们</el-menu-item>
         <el-menu-item index="/login">登录</el-menu-item>
-        <el-menu-item index="6">注册</el-menu-item>
+        <el-menu-item index="/register">注册</el-menu-item>
       </el-menu>
 
       <div v-show="mobileMenuList" class="filter">
@@ -52,6 +52,7 @@
           active-text-color="#fff"
           @open="handleOpen"
           @close="handleClose"
+          @select="handleSelects"
         >
           <el-menu-item index="/index/default">
             <span slot="title">首页</span>
@@ -73,7 +74,7 @@
           <el-menu-item index="/login">
             <span slot="title">登录</span>
           </el-menu-item>
-          <el-menu-item index="4">
+          <el-menu-item index="/register">
             <span slot="title">注册</span>
           </el-menu-item>
         </el-menu>
@@ -171,6 +172,10 @@
 
       },
         methods: {
+          handleSelects(key, keyPath) {
+            console.log(key, keyPath)
+            this.mobileMenuList = false
+          },
           handleSelect(key, keyPath) {
                 console.log(key, keyPath)
           },

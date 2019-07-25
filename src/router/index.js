@@ -55,12 +55,22 @@ export const constantRoutes = [
         path: 'detail',
         name: 'detail',
         component: () => import('@/views/index/default/information/detail')
+      },
+      {
+        path: 'hospital',
+        name: 'hospital',
+        component: () => import('@/views/index/hospital')
       }
     ]
   },
   {
     path: '/login',
     component: () => import('@/views/login/index'),
+    hidden: true
+  },
+  {
+    path: '/register',
+    component: () => import('@/views/register/index'),
     hidden: true
   },
   {

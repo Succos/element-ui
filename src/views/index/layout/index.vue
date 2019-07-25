@@ -8,7 +8,9 @@
         <app-header />
       </el-header>
       <el-main class="clearfloat">
+        <transition  name="fade" mode="out-in">
         <router-view />
+        </transition>
       </el-main>
       <el-footer class="clearfloat">
         <app-footer />

@@ -70,7 +70,7 @@
         }
     }
 </script>
-<style lang="css">
+<style lang="css" scoped>
     .notice {
         margin: 40px 0;
     }
