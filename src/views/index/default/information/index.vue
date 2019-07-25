@@ -21,8 +21,9 @@
                     </div>
                   </el-col>
                   <el-col :md="18" :xs="16">
-                    <div class="zixun-link "><a href="http://yzg.100zhuangxiu.cn/?p=4267"><p>装修工人报价
-                                               装修工人装修多少钱</p></a>
+                    <div class="zixun-link " @click="linkTo(3)">
+                      <p>装修工人报价
+                        装修工装修多少钱</p>
                       <div class="zixun-time clearfix"><span class="fl zt-time">2019-07-11</span><span
                         class="fr"
                       ><a
@@ -62,12 +63,13 @@
               <div class="zixun-item clearfix">
                 <el-row :gutter="10">
                   <el-col :md="6" :xs="8">
-                    <div class="zixun-img "><a href="http://yzg.100zhuangxiu.cn/?p=4267"><img
-                      src="http://yzg.100zhuangxiu.cn/wp-content/uploads/2019/07/毛毛虫素材整理-3-1024x684.jpg"
-                      alt=""
-                      width="100%"
-                      height="100%"
-                    ></a>
+                    <div class="zixun-img ">
+                      <a href="http://yzg.100zhuangxiu.cn/?p=4267"><img
+                        src="http://yzg.100zhuangxiu.cn/wp-content/uploads/2019/07/毛毛虫素材整理-3-1024x684.jpg"
+                        alt=""
+                        width="100%"
+                        height="100%"
+                      ></a>
                     </div>
                   </el-col>
                   <el-col :md="18" :xs="16">
@@ -116,7 +118,18 @@
 </template>
 <script>
     export default {
-        name: 'AppInformation'
+      name: 'AppInformation',
+      methods: {
+        linkTo(n) {
+          console.log(n)
+          this.$router.push({
+            name: 'detail',
+            params: {
+              article_id: '1'
+            }
+          })
+        }
+      }
     }
 </script>
 <style lang="css" scoped>

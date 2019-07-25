@@ -2,14 +2,14 @@
 <template>
   <div>
     <el-container>
-<!--      <router-link to="/index/default">Go to index</router-link>-->
-<!--      <router-link to="/index/about">Go to device</router-link>-->
+      <!--      <router-link to="/index/default">Go to index</router-link>-->
+      <!--      <router-link to="/index/about">Go to device</router-link>-->
       <el-header class="clearfloat">
         <app-header />
       </el-header>
-        <el-main class="clearfloat">
-            <router-view />
-        </el-main>
+      <el-main class="clearfloat">
+        <router-view />
+      </el-main>
       <el-footer class="clearfloat">
         <app-footer />
       </el-footer>

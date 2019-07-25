@@ -1,8 +1,8 @@
 <template>
   <el-main class="app-join">
-      <div class="banner bannerBox">
+    <div class="banner bannerBox">
       <a href="http://yzg.100zhuangxiu.cn/yizhaogong.html">
-          <img src="http://yzg.100zhuangxiu.cn/wp-content/uploads/2019/06/2.jpg" alt="">
+        <img src="http://yzg.100zhuangxiu.cn/wp-content/uploads/2019/06/2.jpg" alt="">
       </a>
     </div>
     <div class="app-service">

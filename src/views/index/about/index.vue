@@ -43,7 +43,7 @@
     .banner .banner-bg {
         width: 100%;
         display: block;
-        vertical-align: middle;
+        vertical-align: middl e;
     }
     .service-process h3 {
         font-size: 1.2rem;
