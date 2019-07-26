@@ -62,7 +62,7 @@
               <span>医院</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="1-1">介绍设备</el-menu-item>
+              <el-menu-item index="/index/hospital">介绍设备</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-menu-item index="/index/join">
