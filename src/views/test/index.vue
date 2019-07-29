@@ -1,18 +1,19 @@
 <template>
   <div class="app-container">
-    <ul class="menu" style="margin: 0 auto">
-      <li v-for="(v,i) in menuData" :key="i" class="menu-item" @click="menuShow(v,i)">
-        <a href="#">{{ v.title }}</a>
-        <b :class="v.flag?'arrow-down':'arrow-up'">^^</b>
-        <div v-show="v.flag">
-          <ul class="submenu">
-            <li v-for="(item,index) in v.childs" :key="index" class="menu-item"><a href="#">{{ item.title }}</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
-</template>
+    <div style="width: 100%;height: 1px" />
+    <div class="block">
+      <span class="demonstration">完整功能</span>
+      <el-pagination
+        :current-page="currentPage"
+        :page-sizes="[2, 4, 6, 8]"
+        :page-size="2"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="8"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+      />
+    </div>
+  </div></template>
 <style lang="css" scoped>
     * {
         padding: 0;
@@ -42,80 +43,90 @@
         text-align: center;
     }
 </style>
+export default {
+methods:
+}
 
 <script>
     export default {
-        name: 'Test',
-        data() {
-            return {
-                menuData: [
-                    {
-                        title: '一级菜单',
-                        icon: 'el-icon-message',
-                        flag: false,
-                        classShow: true,
-                        bigshowclass: false,
-                        isSubShow: false
-                    },
-                    {
-                        icon: 'el-icon-message',
-                        title: '两级菜单',
-                        bigshowclass: false,
-                        isSubShow: false,
-                        flag: true,
-                        childs: [
-                            {
-                                icon: 'el-icon-loading',
-                                title: '权限管理',
-                                path: '',
-                                showclass: false
-                            },
-                            {
-                                icon: 'el-icon-bell',
-                                title: '角色管理',
-                                path: '',
-                                showclass: false
-                            }
-                        ]
-                    },
-                  {
-                    icon: 'el-icon-message',
-                    title: '两级菜单er',
-                    bigshowclass: false,
-                    isSubShow: false,
-                    flag: true,
-                    childs: [
-                      {
-                        icon: 'el-icon-loading',
-                        title: '权限管理',
-                        path: '',
-                        showclass: false
-                      },
-                      {
-                        icon: 'el-icon-bell',
-                        title: '角色管理',
-                        path: '',
-                        showclass: false
-                      }
-                    ]
-                  }
-                ]
+      name: 'Test',
+      data() {
+        return {
+          menuData: [
+            {
+              title: '一级菜单',
+              icon: 'el-icon-message',
+              flag: false,
+              classShow: true,
+              bigshowclass: false,
+              isSubShow: false
+            },
+            {
+              icon: 'el-icon-message',
+              title: '两级菜单',
+              bigshowclass: false,
+              isSubShow: false,
+              flag: true,
+              childs: [
+                {
+                  icon: 'el-icon-loading',
+                  title: '权限管理',
+                  path: '',
+                  showclass: false
+                },
+                {
+                  icon: 'el-icon-bell',
+                  title: '角色管理',
+                  path: '',
+                  showclass: false
+                }
+              ]
+            },
+            {
+              icon: 'el-icon-message',
+              title: '两级菜单er',
+              bigshowclass: false,
+              isSubShow: false,
+              flag: true,
+              childs: [
+                {
+                  icon: 'el-icon-loading',
+                  title: '权限管理',
+                  path: '',
+                  showclass: false
+                },
+                {
+                  icon: 'el-icon-bell',
+                  title: '角色管理',
+                  path: '',
+                  showclass: false
+                }
+              ]
+            }
+          ],
+          currentPage: 1
 
-            }
-        },
-        methods: {
-            menuShow(v, i) {
-               if (v.childs && v.childs.length > 0) {
-                    // 展开菜单
-                   // 同时保证只有一个子菜单保持在菜单展开状态
-                 this.menuData.forEach(function(item, index) {
-                   item.flag = false
-                 })
-                 v.flag = !v.flag
-               } else {
-                   console.log(v.title)
-               }
-            }
         }
+      },
+      methods: {
+        menuShow(v, i) {
+          if (v.childs && v.childs.length > 0) {
+            // 展开菜单
+            // 同时保证只有一个子菜单保持在菜单展开状态
+            this.menuData.forEach(function(item, index) {
+              item.flag = false
+            })
+            v.flag = !v.flag
+          } else {
+            console.log(v.title)
+          }
+        },
+        handleSizeChange(val) {
+          console.log(`每页 ${val} 条`)
+        },
+        handleCurrentChange(val) {
+          console.log(`当前页: ${val}`)
+        }
+      }
     }
 </script>

@@ -3,15 +3,15 @@
     <footer style="width: 100%;background-color:#222;">
       <el-row class="footer-content">
         <el-col :xs="24" :sm="6" class="footer-logo">
-          <a href="http://yzg.100zhuangxiu.cn/">
-            <img src="https://www.dayujiedan.cn/wp-content/uploads/2019/06/logo_new.png" alt="">
+          <a href="http://weixiu.cn/">
+            <img src="@/assets/logo/logo-opcity.png" alt="">
           </a>
         </el-col>
         <el-col :xs="24" :sm="6" class="contact">
           <p>电话：400-100-2662&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
           <p>邮箱：guyuanzhuangxiu@qq.com</p>
           <p>客服：1534461118&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-          <p>地址：宁夏银川市兴庆区胜利南街嘉木花园</p>
+          <p>地址：云南省昆明市盘龙区海伦中心1栋12楼</p>
         </el-col>
         <el-col :xs="24" :sm="6">
           <div class="Ios">

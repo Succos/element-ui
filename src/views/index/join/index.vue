@@ -2,7 +2,7 @@
   <el-main class="app-join">
     <div class="banner bannerBox">
       <a href="http://yzg.100zhuangxiu.cn/yizhaogong.html">
-        <img src="http://yzg.100zhuangxiu.cn/wp-content/uploads/2019/06/2.jpg" alt="">
+        <img src="http://111.230.222.213:8087/img/6.png" alt=""  >
       </a>
     </div>
     <div class="app-service">

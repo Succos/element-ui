@@ -1,11 +1,9 @@
 <template>
   <div class="app-content">
-    <div class="swiper" style="width: 100%" :height="bannerHeight + 'px'">
-      <el-carousel :interval="2000" arrow="always">
+    <div class="swiper" style="width: 100%">
+      <el-carousel :interval="2000" arrow="always" :height="bannerHeight + 'px'">
         <el-carousel-item v-for="(item,index) in dataimg" :key="index">
-          <div>
             <img :src="item.src" class="bannerImg" :title="item.txt">
-          </div>
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -18,6 +16,8 @@
   .bannerImg{
     width: 100%;
     height: inherit;
+    min-height: 360px;
+    min-width: 1400px;
   }
     .el-carousel__item h3 {
         color: #475669;
@@ -36,8 +36,8 @@
   .bannerImg{
     width: 100%;
     height: inherit;
-    min-height: 360px;
-    min-width: 1400px;
+    min-height: 100px;
+    min-width: 600px;
   }
 </style>
 <script>
@@ -45,12 +45,16 @@
         name: 'AppContent',
         data() {
             return {
-              bannerHeight: 530,
+              bannerHeight: 630,
               items: null,
                 dataimg: [{
-                    src: '/assets/logo/logo-small.png',
+                    src: 'http://111.230.222.213:8087/img/6.png',
                     txt: '"Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna."'
-                }
+                },
+                  {
+                    src: 'http://111.230.222.213:8087/img/7.png',
+                    txt: '"Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna."'
+                  }
                 ]
             }
         },
@@ -65,8 +69,8 @@
       methods: {
         setSize() {
           this.bannerHeight = 740 / 2560 * this.screenWidth
-          if (this.bannerHeight === 740) this.bannerHeight = 740
-          if (this.bannerHeight < 360) this.bannerHeight = 360
+          if (this.bannerHeight > 768) this.bannerHeight = 630
+          if (this.bannerHeight < 360) this.bannerHeight = 150
         }
       }
     }

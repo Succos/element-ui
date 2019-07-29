@@ -22,13 +22,13 @@
                   </el-col>
                   <el-col :md="18" :xs="16">
                     <div class="zixun-link " @click="linkTo(3)">
-                      <p>装修工人报价
-                        装修工装修多少钱</p>
+                      <p>维修人员报价
+                        维修人员装修多少钱</p>
                       <div class="zixun-time clearfix"><span class="fl zt-time">2019-07-11</span><span
                         class="fr"
                       ><a
                         href="/"
-                      >来源：大鱼接单</a></span></div>
+                      >来源：易订维修</a></span></div>
                     </div>
                   </el-col>
                 </el-row>
@@ -47,13 +47,13 @@
                     </div>
                   </el-col>
                   <el-col :md="18" :xs="16">
-                    <div class="zixun-link "><a href="http://yzg.100zhuangxiu.cn/?p=4267"><p>装修工人报价
-                                               装修工人装修多少钱</p></a>
+                    <div class="zixun-link "><a href="http://yzg.100zhuangxiu.cn/?p=4267"><p>维修人员报价
+                                               维修人员装修多少钱</p></a>
                       <div class="zixun-time clearfix"><span class="fl zt-time">2019-07-11</span><span
                         class="fr"
                       ><a
                         href="/"
-                      >来源：大鱼接单</a></span></div>
+                      >来源：易订维修</a></span></div>
                     </div>
                   </el-col>
                 </el-row>
@@ -73,13 +73,13 @@
                     </div>
                   </el-col>
                   <el-col :md="18" :xs="16">
-                    <div class="zixun-link "><a href="http://yzg.100zhuangxiu.cn/?p=4267"><p>装修工人报价
-                                               装修工人装修多少钱</p></a>
+                    <div class="zixun-link "><a href="http://yzg.100zhuangxiu.cn/?p=4267"><p>维修人员报价
+                                               维修人员装修多少钱</p></a>
                       <div class="zixun-time clearfix"><span class="fl zt-time">2019-07-11</span><span
                         class="fr"
                       ><a
                         href="/"
-                      >来源：大鱼接单</a></span></div>
+                      >来源：易订维修</a></span></div>
                     </div>
                   </el-col>
                 </el-row>
@@ -98,13 +98,13 @@
                     </div>
                   </el-col>
                   <el-col :md="18" :xs="16">
-                    <div class="zixun-link "><a href="http://yzg.100zhuangxiu.cn/?p=4267"><p>装修工人报价
-                                               装修工人装修多少钱</p></a>
+                    <div class="zixun-link "><a href="http://yzg.100zhuangxiu.cn/?p=4267"><p>维修人员报价
+                                               维修人员装修多少钱</p></a>
                       <div class="zixun-time clearfix"><span class="fl zt-time">2019-07-11</span><span
                         class="fr"
                       ><a
                         href="/"
-                      >来源：大鱼接单</a></span></div>
+                      >来源：易订维修</a></span></div>
                     </div>
                   </el-col>
                 </el-row>

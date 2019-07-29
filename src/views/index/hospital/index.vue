@@ -4,43 +4,35 @@
       <el-tab-pane label="放射科设备">
         <el-row :gutter="50">
           <el-col :md="6" :xs="24" class="bg-white">
-            <el-row :gutter="10">
-              <el-col :span="8">
-                <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="100%" height="100%" border="0">
-              </el-col>
-              <el-col :span="16">
-                <div style="height: 30px;text-align: left;line-height: 30px;font-size: 13px"><p>设备名称</p></div>
-                <div style="height: 30px;text-align: right;line-height: 30px;color: #009fe8;font-size: 9px"><a>查看详情</a></div>
-              </el-col>
+            <el-row :gutter="10" >
+              <div style="text-align: center">
+                <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="80%" height="80%" border="0">
+                <div style="height: 30px;line-height: 30px;font-size: 13px"><p>设备名称</p></div>
+              </div>
             </el-row>
           </el-col>
           <el-col :md="6" :xs="24" class="bg-white">
-            <el-row :gutter="10">
-              <el-col :span="8">
-                <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="100%" height="100%" border="0">
-              </el-col>
-              <el-col :span="16"><p>西门子CT维修</p></el-col>
+            <el-row :gutter="10" >
+              <div style="text-align: center">
+                <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="80%" height="80%" border="0">
+                <div style="height: 30px;line-height: 30px;font-size: 13px"><p>设备名称</p></div>
+              </div>
             </el-row>
           </el-col>
           <el-col :md="6" :xs="24" class="bg-white">
-            <el-row :gutter="10">
-              <el-col :span="8">
-                <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="100%" height="100%" border="0">
-              </el-col>
-              <el-col :span="16">
-                <el-row :gutter="10">
-                  <el-col :span="24">10</el-col>
-                  <el-col :span="24">10</el-col>
-                </el-row>
-              </el-col>
+            <el-row :gutter="10" >
+              <div style="text-align: center">
+                <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="80%" height="80%" border="0">
+                <div style="height: 30px;line-height: 30px;font-size: 13px"><p>设备名称</p></div>
+              </div>
             </el-row>
           </el-col>
           <el-col :md="6" :xs="24" class="bg-white">
-            <el-row :gutter="10">
-              <el-col :span="8">
-                <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="100%" height="100%" border="0">
-              </el-col>
-              <el-col :span="16"><p>西门子CT维修</p></el-col>
+            <el-row :gutter="10" >
+              <div style="text-align: center">
+                <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="80%" height="80%" border="0">
+                <div style="height: 30px;line-height: 30px;font-size: 13px"><p>设备名称</p></div>
+              </div>
             </el-row>
           </el-col>
         </el-row>
