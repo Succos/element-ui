@@ -4,7 +4,7 @@
       <el-tab-pane label="放射科设备">
         <el-row :gutter="50">
           <el-col :md="6" :xs="24" class="bg-white">
-            <el-row :gutter="10" >
+            <el-row :gutter="10">
               <div style="text-align: center">
                 <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="80%" height="80%" border="0">
                 <div style="height: 30px;line-height: 30px;font-size: 13px"><p>设备名称</p></div>
@@ -12,7 +12,7 @@
             </el-row>
           </el-col>
           <el-col :md="6" :xs="24" class="bg-white">
-            <el-row :gutter="10" >
+            <el-row :gutter="10">
               <div style="text-align: center">
                 <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="80%" height="80%" border="0">
                 <div style="height: 30px;line-height: 30px;font-size: 13px"><p>设备名称</p></div>
@@ -20,7 +20,7 @@
             </el-row>
           </el-col>
           <el-col :md="6" :xs="24" class="bg-white">
-            <el-row :gutter="10" >
+            <el-row :gutter="10">
               <div style="text-align: center">
                 <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="80%" height="80%" border="0">
                 <div style="height: 30px;line-height: 30px;font-size: 13px"><p>设备名称</p></div>
@@ -28,7 +28,7 @@
             </el-row>
           </el-col>
           <el-col :md="6" :xs="24" class="bg-white">
-            <el-row :gutter="10" >
+            <el-row :gutter="10">
               <div style="text-align: center">
                 <img src="http://www.scrayl.com/uploadfile/201941164615249.jpg" width="80%" height="80%" border="0">
                 <div style="height: 30px;line-height: 30px;font-size: 13px"><p>设备名称</p></div>
@@ -54,10 +54,6 @@
       border: 1px solid #000;
       background: red;
     }
-    .flex-row{
-      display: flex;
-      flex-direction: row;
-    }
   .bg-white{
     background: #fafafa;
     border-bottom: 2px solid #fff
@@ -69,7 +65,7 @@
         name: 'Hospital',
       data() {
        return {
-         tabPosition: 'left',
+         tabPosition: 'top',
          screenWidth: 1000
        }
       },
@@ -89,6 +85,10 @@
       },
       mounted() {
           const that = this
+        if (document.body.clientWidth < 1200) {
+          // 组件加载时优先设置tab位置
+          this.tabPosition = 'left'
+        }
         window.addEventListener('resize', function() {
           return (() => {
             window.screenWidth = document.body.clientWidth
@@ -99,10 +99,8 @@
       methods: {
           auto() {
             if (this.screenWidth < 1200) {
-              console.log('收起来')
               this.tabPosition = 'left'
             } else {
-              console.log('展开')
               this.tabPosition = 'top'
             }
           }

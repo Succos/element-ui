@@ -31,7 +31,6 @@
             slot="title"
           >医院</template>
           <el-menu-item index="/index/hospital">介绍设备</el-menu-item>
-          <el-menu-item index="2-2">2-2</el-menu-item>
         </el-submenu>
         <el-menu-item index="/index/join">我要加入</el-menu-item>
         <el-menu-item index="/index/about">关于我们</el-menu-item>

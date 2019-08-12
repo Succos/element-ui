@@ -3,7 +3,7 @@
     <div class="swiper" style="width: 100%">
       <el-carousel :interval="2000" arrow="always" :height="bannerHeight + 'px'">
         <el-carousel-item v-for="(item,index) in dataimg" :key="index">
-            <img :src="item.src" class="bannerImg" :title="item.txt">
+          <img :src="item.src" class="bannerImg" :title="item.txt">
         </el-carousel-item>
       </el-carousel>
     </div>

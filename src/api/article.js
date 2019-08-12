@@ -6,3 +6,9 @@ export function getArticleList(id) {
     method: 'get'
   })
 }
+export function getTopics() {
+  return request({
+    url: `/topic`,
+    method: 'get'
+  })
+}
