@@ -111,10 +111,22 @@
             this.$store.dispatch('user/login', this.loginForm).then(() => {
               this.$router.push({ path: this.redirect || '/' })
               this.loading = false
+                 this.$message({
+                showClose: true,
+                message: '登录成功，正在跳转',
+                type: 'success'
+          });
+
+
             }).catch((error) => {
               const result = error.response.data
-              this.$message.error(result.info)
-              this.loading = false
+               this.$message({
+                showClose: true,
+                message: result.message,
+                type: 'error'
+        });
+              // this.$message.error(result.info)
+             this.loading = false
               this.loginForm = {
                 username: '',
                 password: ''
